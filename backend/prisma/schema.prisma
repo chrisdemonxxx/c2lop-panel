@@ -1,0 +1,68 @@
+// Prisma schema for SysmanagePro
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model LoginEvent {
+  id        Int      @id @default(autoincrement())
+  email     String
+  status    String
+  ip        String?
+  timestamp DateTime @default(now())
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  role      Role
+  createdAt DateTime @default(now())
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  hostname  String
+  ip        String
+  status    Status
+  tasks     Task[]
+  updatedAt DateTime @updatedAt
+  tags      String[]
+  is_agent  Boolean  @default(false)
+  country   String?  // Country from IP geolocation
+  city      String?  // City from IP geolocation
+  lat       Float?   // Latitude
+  lon       Float?   // Longitude
+}
+
+model Task {
+  id        String   @id @default(cuid())
+  command   String
+  clientId  String
+  client    Client   @relation(fields: [clientId], references: [id])
+  result    TaskResult?
+  createdAt DateTime @default(now())
+}
+
+model TaskResult {
+  id         String   @id @default(cuid())
+  taskId     String   @unique
+  task       Task     @relation(fields: [taskId], references: [id])
+  output     String
+  receivedAt DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  OPERATOR
+}
+
+enum Status {
+  ONLINE
+  OFFLINE
+}

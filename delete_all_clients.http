@@ -1,0 +1,9 @@
+### Delete all clients from the backend (requires JWT token)
+DELETE http://localhost:8080/api/v1/clients
+Authorization: Bearer {{JWT_TOKEN}}
+
+###
+# Instructions:
+# 1. Replace {{JWT_TOKEN}} with your valid JWT from login.
+# 2. If your backend is remote, replace localhost:8080 with your backend's host:port.
+# 3. Run this request in VS Code REST Client extension, Insomnia, or Postman.

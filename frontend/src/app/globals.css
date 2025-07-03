@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Real Theme Skins with CSS Variables === */
+:root {
+  --bg: #101010;
+  --fg: #e0e0e0;
+  --accent: #00ff41;
+  --card: #181c1c;
+  --border: #333;
+  --button-bg: #222;
+  --button-fg: #00ff41;
+}
+
+.matrix {
+  --bg: #050d0d;
+  --fg: #00ff41;
+  --accent: #00ff41;
+  --card: #111a11;
+  --border: #006622;
+  --button-bg: #0a1f0a;
+  --button-fg: #00ff41;
+}
+.anonymous {
+  --bg: #111;
+  --fg: #fff;
+  --accent: #0ff;
+  --card: #222;
+  --border: #333;
+  --button-bg: #222;
+  --button-fg: #0ff;
+}
+.kali {
+  --bg: #181c20;
+  --fg: #39c5bb;
+  --accent: #39c5bb;
+  --card: #23272e;
+  --border: #3b3f46;
+  --button-bg: #23272e;
+  --button-fg: #39c5bb;
+}
+.cyber {
+  --bg: #0f1021;
+  --fg: #f6019d;
+  --accent: #00f0ff;
+  --card: #1a1b2a;
+  --border: #00f0ff;
+  --button-bg: #1a1b2a;
+  --button-fg: #f6019d;
+}
+.midnight {
+  --bg: #1a2233;
+  --fg: #badaff;
+  --accent: #5ad1ff;
+  --card: #232b3a;
+  --border: #5ad1ff;
+  --button-bg: #232b3a;
+  --button-fg: #badaff;
+}
+.retro {
+  --bg: #fffbe6;
+  --fg: #2d2a2e;
+  --accent: #e67e22;
+  --card: #f3eac2;
+  --border: #e67e22;
+  --button-bg: #ffe680;
+  --button-fg: #2d2a2e;
+}
+.mono {
+  --bg: #ededed;
+  --fg: #222;
+  --accent: #555;
+  --card: #fafafa;
+  --border: #bbb;
+  --button-bg: #fff;
+  --button-fg: #222;
+}
+.cyberpunk {
+  --bg: #18122b;
+  --fg: #f8f800;
+  --accent: #ff0099;
+  --card: #2a1a3a;
+  --border: #ff0099;
+  --button-bg: #2a1a3a;
+  --button-fg: #f8f800;
+}
+.wireframe {
+  --bg: #fff;
+  --fg: #000;
+  --accent: #222;
+  --card: #fff;
+  --border: #000;
+  --button-bg: #fff;
+  --button-fg: #000;
+}
+.stealth {
+  --bg: #181818;
+  --fg: #888;
+  --accent: #444;
+  --card: #232323;
+  --border: #333;
+  --button-bg: #232323;
+  --button-fg: #888;
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar, .menu, nav {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border-right: 2px solid var(--border) !important;
+}
+
+.card, .profile-card, .dashboard-card {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+button, .btn {
+  background: var(--button-bg) !important;
+  color: var(--button-fg) !important;
+  border: 1px solid var(--border) !important;
+  transition: background 0.2s, color 0.2s;
+}
+button:hover, .btn:hover {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+}
+
+a {
+  color: var(--accent) !important;
+}
+
+input, textarea, select {
+  background: var(--card) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent) !important;
+}

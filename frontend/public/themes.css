@@ -1,0 +1,10 @@
+body.matrix     { background-color: black; color: #00ff00; }
+body.anonymous  { background-color: #111; color: #eee; font-family: monospace; }
+body.kali       { background-color: #0f1c2e; color: #5cb3ff; }
+body.cyber      { background-color: #05080c; color: #00e5ff; }
+body.midnight   { background-color: #1a1a2e; color: #e94560; }
+body.retro      { background-color: #0f0f0f; color: #33ff33; }
+body.mono       { background: white; color: black; font-family: monospace; }
+body.cyberpunk  { background: #0f001a; color: #ff00ff; }
+body.wireframe  { background: #181818; color: #cfcfcf; }
+body.stealth    { background: #000; color: #666; }
